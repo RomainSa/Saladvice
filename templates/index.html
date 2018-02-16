@@ -10,20 +10,20 @@
 
 <div>
 Nombre d'ingrédients<br>
-<select name="n_ingredients">
-  {% for n_ingredients_ in n_ingredients_list %}
-    {% if n_ingredients_ == n_ingredients and save_n_ingredients %}
-      <option value="{{n_ingredients_}}" selected>{{n_ingredients_}}</option>
+<select name="ingredients_number">
+  {% for ingredients_number_ in ingredients_numbers %}
+    {% if ingredients_number_ == ingredients_number and save_ingredients_number %}
+      <option value="{{ingredients_number_}}" selected>{{ingredients_number_}}</option>
     {% else %}
-      <option value="{{n_ingredients_}}">{{n_ingredients_}}</option>
+      <option value="{{ingredients_number_}}">{{ingredients_number_}}</option>
     {% endif %}
   {% endfor %}
 </select>
 
-{% if save_n_ingredients %}
-  <input type="checkbox" name="save_n_ingredients" checked> Sauver
+{% if save_ingredients_number %}
+  <input type="checkbox" name="save_ingredients_number" checked> Sauver
 {% else %}
-  <input type="checkbox" name="save_n_ingredients"> Sauver
+  <input type="checkbox" name="save_ingredients_number"> Sauver
 {% endif %}
 </div>
 
@@ -123,7 +123,7 @@ Ingrédient 4<br>
 </select>
 </div>
 
-{% if n_ingredients == "5" or n_ingredients == "6"%}
+{% if ingredients_number == "5" or ingredients_number == "6"%}
     <div>
     Ingrédient 5<br>
     <select name="ingredient5">
@@ -138,7 +138,7 @@ Ingrédient 4<br>
     </div>
 {% endif %}
 
-{% if n_ingredients == "6"%}
+{% if ingredients_number == "6"%}
     <div>
     Ingrédient 6<br>
     <select name="ingredient6">

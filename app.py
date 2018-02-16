@@ -1,14 +1,14 @@
 from flask import Flask, render_template, request
-from saladvice import bases, sauces, ingredients, n_ingredients
+from saladvice import bases, sauces, ingredients, ingredients_numbers
 
 app = Flask(__name__)
 
 
 @app.route('/', methods=["GET", "POST"])
 def index():
-    # number of ingredients
-    n_ingredients_ = request.form['n_ingredients'] if 'n_ingredients' in request.form else n_ingredients[0]
-    save_n_ingredients = 'save_n_ingredients' in request.form
+    # ingredients number
+    ingredients_number = request.form['ingredients_number'] if 'ingredients_number' in request.form else ingredients_numbers[0]
+    save_ingredients_number = 'save_ingredients_number' in request.form
 
     # base
     base = request.form['base'] if 'base' in request.form else bases[0]
@@ -38,9 +38,9 @@ def index():
     ingredient6 = request.form['ingredient6'] if 'ingredient6' in request.form else ingredients[5]
 
     return render_template('index.html',
-                           n_ingredients_list=[str(i) for i in n_ingredients],   # must be str since html will send option value (=str)
-                           n_ingredients=n_ingredients_,
-                           save_n_ingredients=save_n_ingredients,
+                           ingredients_numbers=[str(i) for i in ingredients_numbers],  # must be str since html will send option value (=str)
+                           ingredients_number=ingredients_number,
+                           save_ingredients_number=save_ingredients_number,
                            bases=bases,
                            base=base,
                            save_base=save_base,

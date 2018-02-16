@@ -1,4 +1,4 @@
-n_ingredients = [4, 5, 6]
+ingredients_numbers = [4, 5, 6]
 ingredients = ['crème fraiche', 'ciboulette', 'persil', 'aneth', 'ail', 'oignon', 'céleri', 'paprika',
                'moutarde', 'citron']
 sauces = ['ranch', 'mielmoutarde']
