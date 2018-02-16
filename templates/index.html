@@ -6,29 +6,29 @@
 </head>
 <body>
 
-<div>
-<select name="colour" method="GET" action="/">
-  <option value="aucun" selected>Aucun</option>"
-  {% for colour in colours %}
-  <option value="{{colour[0]}}">{{colour[0]}}</option>"
-  {% endfor %}
-</select>
-<input type="checkbox" name="force_color"> Force
-</div>
-
-<div>
-<select name="note" method="GET" action="/">
-  <option value="aucun" selected="selected">Aucun</option>"
-  {% for note in notes %}
-  <option value="{{note}}" SELECTED>{{note}}</option>"
-  {% endfor %}
-</select>
-<input type="checkbox" name="force_color"> Force
-</div>
-
 <form method="post">
-<input type="submit" value="Click Me">
-</form>
 
+<div>
+Nombre d'ingrédients<br>
+<select name="n_ingredients">
+  {% for n_ingredients_ in n_ingredients_list %}
+    {% if n_ingredients_ == n_ingredients and save_n_ingredients %}
+      <option value="{{n_ingredients_}}" selected>{{n_ingredients_}}</option>
+    {% else %}
+      <option value="{{n_ingredients_}}">{{n_ingredients_}}</option>
+    {% endif %}
+  {% endfor %}
+</select>
+
+{% if save_n_ingredients %}
+  <input type="checkbox" name="save_n_ingredients" checked> Sauver
+{% else %}
+  <input type="checkbox" name="save_n_ingredients"> Sauver
+{% endif %}
+</div>
+
+<input type="submit" name="generate" value="Générer">
+
+</form>
 </body>
 </html>
