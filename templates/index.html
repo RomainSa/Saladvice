@@ -27,6 +27,132 @@ Nombre d'ingrédients<br>
 {% endif %}
 </div>
 
+<div>
+Base<br>
+<select name="base">
+  {% for base_ in bases %}
+    {% if base_ == base and save_base %}
+      <option value="{{base_}}" selected>{{base_}}</option>
+    {% else %}
+      <option value="{{base_}}">{{base_}}</option>
+    {% endif %}
+  {% endfor %}
+</select>
+
+{% if save_base %}
+  <input type="checkbox" name="save_base" checked> Sauver
+{% else %}
+  <input type="checkbox" name="save_base"> Sauver
+{% endif %}
+</div>
+
+<div>
+Sauce<br>
+<select name="sauce">
+  {% for sauce_ in sauces %}
+    {% if sauce_ == sauce and save_sauce %}
+      <option value="{{sauce_}}" selected>{{sauce_}}</option>
+    {% else %}
+      <option value="{{sauce_}}">{{sauce_}}</option>
+    {% endif %}
+  {% endfor %}
+</select>
+
+{% if save_sauce %}
+  <input type="checkbox" name="save_sauce" checked> Sauver
+{% else %}
+  <input type="checkbox" name="save_sauce"> Sauver
+{% endif %}
+</div>
+
+<div>
+Ingrédient 1<br>
+<select name="ingredient1">
+  {% for ingredient1_ in ingredients %}
+    {% if ingredient1_ == ingredient1 and save_ingredient1 %}
+      <option value="{{ingredient1_}}" selected>{{ingredient1_}}</option>
+    {% else %}
+      <option value="{{ingredient1_}}">{{ingredient1_}}</option>
+    {% endif %}
+  {% endfor %}
+</select>
+
+{% if save_ingredient1 %}
+  <input type="checkbox" name="save_ingredient1" checked> Sauver
+{% else %}
+  <input type="checkbox" name="save_ingredient1"> Sauver
+{% endif %}
+</div>
+
+<div>
+Ingrédient 2<br>
+<select name="ingredient2">
+  {% for ingredient2_ in ingredients %}
+    {% if ingredient2_ == ingredient2 %}
+      <option value="{{ingredient2_}}" selected>{{ingredient2_}}</option>
+    {% else %}
+      <option value="{{ingredient2_}}">{{ingredient2_}}</option>
+    {% endif %}
+  {% endfor %}
+</select>
+</div>
+
+<div>
+Ingrédient 3<br>
+<select name="ingredient3">
+  {% for ingredient3_ in ingredients %}
+    {% if ingredient3_ == ingredient3 %}
+      <option value="{{ingredient3_}}" selected>{{ingredient3_}}</option>
+    {% else %}
+      <option value="{{ingredient3_}}">{{ingredient3_}}</option>
+    {% endif %}
+  {% endfor %}
+</select>
+</div>
+
+<div>
+Ingrédient 4<br>
+<select name="ingredient4">
+  {% for ingredient4_ in ingredients %}
+    {% if ingredient4_ == ingredient4 %}
+      <option value="{{ingredient4_}}" selected>{{ingredient4_}}</option>
+    {% else %}
+      <option value="{{ingredient4_}}">{{ingredient4_}}</option>
+    {% endif %}
+  {% endfor %}
+</select>
+</div>
+
+{% if n_ingredients == "5" or n_ingredients == "6"%}
+    <div>
+    Ingrédient 5<br>
+    <select name="ingredient5">
+      {% for ingredient5_ in ingredients %}
+        {% if ingredient5_ == ingredient5 %}
+          <option value="{{ingredient5_}}" selected>{{ingredient5_}}</option>
+        {% else %}
+          <option value="{{ingredient5_}}">{{ingredient5_}}</option>
+        {% endif %}
+      {% endfor %}
+    </select>
+    </div>
+{% endif %}
+
+{% if n_ingredients == "6"%}
+    <div>
+    Ingrédient 6<br>
+    <select name="ingredient6">
+      {% for ingredient6_ in ingredients %}
+        {% if ingredient6_ == ingredient6 %}
+          <option value="{{ingredient6_}}" selected>{{ingredient6_}}</option>
+        {% else %}
+          <option value="{{ingredient6_}}">{{ingredient6_}}</option>
+        {% endif %}
+      {% endfor %}
+    </select>
+    </div>
+{% endif %}
+
 <input type="submit" name="generate" value="Générer">
 
 </form>

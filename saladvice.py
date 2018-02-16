@@ -1,3 +1,10 @@
+n_ingredients = [4, 5, 6]
+ingredients = ['crème fraiche', 'ciboulette', 'persil', 'aneth', 'ail', 'oignon', 'céleri', 'paprika',
+               'moutarde', 'citron']
+sauces = ['ranch', 'mielmoutarde']
+bases = ['riz', 'pates', 'salade', 'pates/salade']
+
+
 class Ingredient:
     """
     A basic ingredient
@@ -13,7 +20,7 @@ class Base(Ingredient):
     """
 
     def __init__(self, name):
-        if name not in ['riz', 'pates', 'salade', 'pates/salade']:
+        if name not in bases:
             raise NameError('Unknown base: {}'.format(name))
         self.name = name
 
@@ -25,12 +32,11 @@ class Sauce:
 
     def __init__(self, name):
         self.name = name
-        if name not in ['ranch']:
+        if name not in sauces:
             raise NameError('Unknown sauce: {}'.format(name))
-        self.ingredients = []
+        self.ingredients = ingredients
         if name == 'ranch':
-            for ingredient in ['mayonnaise', 'crème fraiche', 'ciboulette', 'persil', 'aneth', 'ail', 'oignon',
-                               'céleri', 'paprika', 'moutarde', 'citron']:
+            for ingredient in ingredients:
                 self.ingredients.append(Ingredient(ingredient))
 
 
